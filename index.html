@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtymoChakra - Sound to Melody</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 EtymoChakra</h1>
+            <p class="subtitle">Transform your voice into melodic melodies</p>
+        </header>
+
+        <main>
+            <div class="recorder-section">
+                <div class="visualizer-container">
+                    <canvas id="visualizer"></canvas>
+                </div>
+
+                <div class="controls">
+                    <button id="recordBtn" class="btn btn-record">
+                        <span class="btn-icon">🎤</span>
+                        <span class="btn-text">Start Recording</span>
+                    </button>
+                    <button id="stopBtn" class="btn btn-stop" disabled>
+                        <span class="btn-icon">⏹</span>
+                        <span class="btn-text">Stop Recording</span>
+                    </button>
+                </div>
+
+                <div class="status">
+                    <p id="statusText">Ready to record</p>
+                    <div class="timer" id="timer">00:00</div>
+                </div>
+            </div>
+
+            <div class="melody-section">
+                <h2>Generated Melody</h2>
+                <div class="melody-controls">
+                    <button id="generateBtn" class="btn btn-generate" disabled>
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text">Generate Melody</span>
+                    </button>
+                    <button id="playMelodyBtn" class="btn btn-play" disabled>
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">Play Melody</span>
+                    </button>
+                </div>
+
+                <div class="melody-visualization">
+                    <canvas id="melodyCanvas"></canvas>
+                </div>
+
+                <div class="settings">
+                    <label>
+                        Scale:
+                        <select id="scaleSelect">
+                            <option value="major">Major (Happy)</option>
+                            <option value="minor">Minor (Melancholic)</option>
+                            <option value="pentatonic">Pentatonic (Asian)</option>
+                            <option value="blues">Blues</option>
+                        </select>
+                    </label>
+                    <label>
+                        Tempo:
+                        <input type="range" id="tempoSlider" min="60" max="180" value="120">
+                        <span id="tempoValue">120</span> BPM
+                    </label>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>How it works:</h3>
+                <ol>
+                    <li>Click "Start Recording" and sing, hum, or make sounds</li>
+                    <li>Click "Stop Recording" when done</li>
+                    <li>Click "Generate Melody" to transform your recording</li>
+                    <li>Adjust scale and tempo, then play your melody!</li>
+                </ol>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
